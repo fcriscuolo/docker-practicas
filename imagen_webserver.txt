@@ -1,2 +1,6 @@
-docker build -t apache-centos:segunda .
-docker run -d --name apache1 -p 80:80 apache-centos:segunda
+# Dockerfile para webserver sobre CentOS:
+
+
+# Ejecutar luego de crear el Dockerfile
+docker build -t apache-centos:webserver .
+docker run -d --name apache1 -p 80:80 apache-centos:webserver
