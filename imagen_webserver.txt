@@ -1,0 +1,2 @@
+docker build -t apache-centos:segunda .
+docker run -d --name apache1 -p 80:80 apache-centos:segunda

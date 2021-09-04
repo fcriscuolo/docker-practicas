@@ -1,0 +1,19 @@
+Notas: entender y poder diferenciar imagenes de contenedores. 
+
+# docker ps -a // <-- esto, que lista ??
+
+// Dockerfile
+siempre arranca con FROM, que So o que imagen desde la que se quiere empezar.
+RUN ayuda a instalar paquetes con comandos; crear usuario, crear carpeta
+COPY/ADD para copiar desde el servidor a la imagen.
+
+
+ENV para la variables de entorno
+WORKDIR
+EXPOSE con esto se exponen los puertos por ejemplo
+
+
+// Para revisar las images se hace con el history:
+$ docker history -H <imagen>:<tag>
+
+// Construir imagen
