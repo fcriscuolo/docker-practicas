@@ -1,0 +1,26 @@
+Imagen: "vive" dentro de Docker. Es un paquete que tiene todo lo necesario para correr una app. Tiene capas (basico), 
+Capa 1: FROM (SO)
+Capa 2: RUN ¿Que viene arriba? ¿un web server? Instalamos un apache. 
+Capa 3: CMD es la linea que se ejecuta cuando arranca el contenedor, lo que levanta el servicio. Si en la capa 2 hicimos
+una instalacion, en la capa 3 lo iniciamos. 
+
+Las capas son de solo lectura, no se pueden modificar ! 
+
+Estas capas se definen en el Dockerfile (ver dockerfile del proyecto).
+
+Imagenes oficiales: los vendors ya hacen sus imagenes. 
+
+Instalacion/bajada de imagenes: si bajamos una imagen sin especifiar, bajará una latest. Si queremos luego bajar otra version, se fijara que capas cambia y solo bajara aquello que sea necesario, indicando 'Already exists'
+
+
+Contenedor:
+Una vez creara la imagen, aparece una capa arriba que trae la ejecucion, ejecuta todo lo que definimos en la imagen. 
+Esta capa si es de escritura (RW), todos los cambios aqui hechos seran temporales. No se modifica en la imagen, 
+solo en el contenedor.
+NO HAY QUE CONFIGURAR COSAS EN ESTA CAPA. Los cambios persistentes se hacen desde las imagenes.
+El contenedor contiene:
+- Imagen / - Volumenes / - Redes (comunicacion entre contenedores y mundo exterior)
+
+ Contenedor vs. VM: es un proceso contra una instancia de recursos; procesador asignado, ram asignada, etc.
+
+Dockerfile

@@ -17,3 +17,23 @@ EXPOSE con esto se exponen los puertos por ejemplo
 $ docker history -H <imagen>:<tag>
 
 // Construir imagen
+
+// Lista las imagenes 
+# docker images
+// Salida:
+dd@developer:~$ docker images
+REPOSITORY      TAG         IMAGE ID       CREATED         SIZE
+apache-centos   webserver   d0a26d4cdc22   5 days ago      370MB
+centos          7           8652b9f0cb4c   10 months ago   204MB
+
+// Bajar imagen (esta en la web):
+dd@developer:~$ docker pull mongo
+
+//  Arrancar un contenedor
+dd@developer:~$ docker run -d 
+
+dd@developer:~/Documentos/docker-practicas$ docker build -t apache-centos:webserver2 .
+dd@developer:~/Documentos/docker-practicas$ docker history -H apache-centos:webserver2
+dd@developer:~/Documentos/docker-practicas$ docker run -d --name apache apache-centos:webserver2
+dd@developer:~$ docker run -d --name webserver3 -p 8081:80 apache-centos:webserver2
+dd@developer:~$ docker exec webserver2 bash -c "echo 'Hola! soy el web server 2' > /var/www/html/index.html"
