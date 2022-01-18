@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    environment:
+      - AUTH=yes
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=p@ssw0rd
+    volumes:
+      #- C:/Users/fc64318/Documents/giteables/docker-practicas/mongodb/volumen/db:/data/db <-- ANDA!
+      - ${MONGO_HOST_DATA}/db:/data/db
+    ports:
+      - "27017:27017"
+
+# Fuente: https://www.linkedin.com/pulse/setup-mongodb-docker-linux-container-windows-10-volume-kumaran/
