@@ -15,3 +15,5 @@ ADD startbootstrap-freelancer-master /var/www/html
 
 # -DFOREGROUD es para dejar corriendo en background el apache.
 CMD apachectl -DFOREGROUND
+
+# Test 10/02/2022
